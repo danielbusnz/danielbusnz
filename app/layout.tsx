@@ -37,17 +37,17 @@ export default function RootLayout({
             lang="en"
             className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
         >
-            <body className="min-h-full lg:flex">
-                <aside className="w-full shrink-0 overflow-y-auto px-6 py-6 lg:sticky lg:top-0 lg:h-screen lg:w-64 lg:px-4 lg:py-8">
+            <body className="min-h-full">
+                <aside className="w-full overflow-y-auto px-6 py-6 lg:fixed lg:left-0 lg:top-0 lg:h-screen lg:w-64 lg:px-4 lg:py-8">
                     <PostTree />
                 </aside>
-                <div className="flex min-h-screen flex-1 flex-col">
+                <div className="flex min-h-screen flex-col">
                     <header className="mx-auto w-full max-w-2xl px-6 pt-12 pb-6">
                         <div className="flex items-center gap-2.5">
                             <Link
                                 href="/"
                                 className="text-lg font-semibold tracking-tight no-underline"
-                                style={{ color: "#8caaee" }}
+                                style={{ color: "#ca9ee6" }}
                             >
                                 Daniel Brooks
                             </Link>
@@ -149,16 +149,32 @@ export default function RootLayout({
                                 href="https://github.com/danielbusnz-lgtm/Peeky"
                                 target="_blank"
                                 rel="noreferrer"
-                                style={{ color: "#99d1db" }}
+                                style={{ color: "#85c1dc" }}
                             >
                                 &quot;Peeky&quot;
                             </a>
                             <span style={punct}>;</span>
                         </p>
+                        <p className="mt-1 font-mono text-sm">
+                            <span style={{ color: "var(--ctp-red)" }}>based_in</span>
+                            <span style={punct}>: </span>
+                            <span style={{ color: "#85c1dc" }}>&quot;Boston&quot;</span>
+                            <span style={punct}>;</span>
+                        </p>
                     </header>
-                    <main className="mx-auto w-full max-w-2xl flex-1 px-6 pb-24">
+                    <main className="mx-auto w-full max-w-2xl flex-1 px-6 pb-12">
                         {children}
                     </main>
+                    <footer className="mx-auto w-full max-w-2xl px-6 pb-12 text-center text-xs text-ctp-subtext0">
+                        design inspired by{" "}
+                        <a
+                            href="https://x.com/yacineMTB"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            @yacineMTB
+                        </a>
+                    </footer>
                 </div>
             </body>
         </html>

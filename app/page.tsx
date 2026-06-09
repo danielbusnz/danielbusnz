@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { getAllPosts, formatDate } from "@/lib/posts";
 
 const projects: [string, string][] = [
@@ -18,11 +20,11 @@ export default function Home() {
             <section className="flex flex-col gap-3">
                 <h2
                     className="text-lg font-semibold tracking-tight"
-                    style={{ color: "#8caaee" }}
+                    style={{ color: "#ca9ee6" }}
                 >
                     Projects
                 </h2>
-                <p className="text-sm" style={{ color: "#99d1db" }}>
+                <p className="text-sm" style={{ color: "#85c1dc" }}>
                     {projects.map(([name, url], i) => (
                         <span key={name}>
                             {i > 0 && ", "}
@@ -30,7 +32,7 @@ export default function Home() {
                                 href={url}
                                 target="_blank"
                                 rel="noreferrer"
-                                style={{ color: "#99d1db" }}
+                                style={{ color: "#85c1dc" }}
                             >
                                 {name}
                             </a>
@@ -43,28 +45,30 @@ export default function Home() {
                     width={1600}
                     height={900}
                     priority
-                    className="h-auto w-full rounded-lg"
+                    className="mt-4 h-auto w-full rounded-lg"
                 />
+                <p className="mt-2 text-center text-[13px] text-ctp-subtext0">
+                    A place for my live notes. What I&apos;m building,
+                    researching, and reading. Unedited, straight from the dome.
+                </p>
             </section>
             {posts.length === 0 && (
                 <p className="text-ctp-subtext0">No posts yet.</p>
             )}
             {posts.map((post) => (
                 <article key={post.slug}>
-                    <time className="text-sm text-ctp-subtext0" dateTime={post.date}>
+                    <Link
+                        href={`/posts/${post.slug}`}
+                        className="text-2xl font-semibold tracking-tight no-underline"
+                        style={{ color: "#ca9ee6" }}
+                    >
                         {formatDate(post.date)}
-                    </time>
-                    <h2 className="mt-1 text-xl font-semibold tracking-tight">
-                        <Link
-                            href={`/posts/${post.slug}`}
-                            className="text-ctp-text no-underline hover:text-ctp-blue"
-                        >
-                            {post.title}
-                        </Link>
-                    </h2>
-                    {post.summary && (
-                        <p className="mt-2 text-ctp-subtext1">{post.summary}</p>
-                    )}
+                    </Link>
+                    <div className="prose mt-4 max-w-none">
+                        <Markdown remarkPlugins={[remarkGfm]}>
+                            {post.content}
+                        </Markdown>
+                    </div>
                 </article>
             ))}
         </div>
