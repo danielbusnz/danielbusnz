@@ -10,11 +10,12 @@ the `date` frontmatter field, newest first.
 
 ## Frontmatter
 
+Only `date` is required. No title, the date is the post header. The body is
+just your thoughts.
+
 ```markdown
 ---
-title: Your title
 date: 2026-06-09
-summary: One line shown on the home page.
 ---
 
 Body in markdown. GitHub-flavored markdown works (tables, task lists, etc.).

@@ -13,13 +13,32 @@ export type PostMeta = {
 
 export type Post = PostMeta & { content: string };
 
+// A short label for the sidebar tree. Uses the `title` frontmatter if set,
+// otherwise derives ~2 words from the first line of the body.
+function treeLabel(title: unknown, content: string): string {
+  if (typeof title === "string" && title.trim()) return title.trim();
+  const firstLine =
+    content
+      .split("\n")
+      .map((l) => l.trim())
+      .find(Boolean) ?? "";
+  const words = firstLine
+    .replace(/^#+\s*/, "") // strip markdown heading marks
+    .replace(/[*_`>[\]()]/g, "") // strip inline markdown
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 5)
+    .join(" ");
+  return words || "untitled";
+}
+
 function readPost(filename: string): Post {
   const slug = filename.replace(/\.md$/, "");
   const raw = fs.readFileSync(path.join(POSTS_DIR, filename), "utf8");
   const { data, content } = matter(raw);
   return {
     slug,
-    title: data.title ?? slug,
+    title: treeLabel(data.title, content),
     date: data.date ? new Date(data.date).toISOString().slice(0, 10) : "",
     summary: data.summary ?? "",
     content,
