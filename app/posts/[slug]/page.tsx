@@ -51,7 +51,7 @@ export default async function PostPage({
           {formatDate(post.date)}
         </time>
       </header>
-      <div className="prose mt-8 max-w-none">
+      <div className="prose prose-sm mt-8 max-w-none">
         <Markdown remarkPlugins={[remarkGfm]}>{post.content}</Markdown>
       </div>
     </article>

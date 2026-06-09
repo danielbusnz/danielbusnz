@@ -64,7 +64,7 @@ export default function Home() {
                     >
                         {formatDate(post.date)}
                     </Link>
-                    <div className="prose mt-4 max-w-none">
+                    <div className="prose prose-sm mt-4 max-w-none">
                         <Markdown remarkPlugins={[remarkGfm]}>
                             {post.content}
                         </Markdown>
