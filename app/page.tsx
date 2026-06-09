@@ -60,7 +60,7 @@ export default function Home() {
                     <Link
                         href={`/posts/${post.slug}`}
                         className="text-2xl font-semibold tracking-tight no-underline"
-                        style={{ color: "#c6d0f5" }}
+                        style={{ color: "#ef9f76" }}
                     >
                         {formatDate(post.date)}
                     </Link>

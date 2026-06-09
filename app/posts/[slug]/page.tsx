@@ -45,7 +45,7 @@ export default async function PostPage({
       <header className="mt-6">
         <time
           className="text-2xl font-semibold tracking-tight"
-          style={{ color: "#c6d0f5" }}
+          style={{ color: "#ef9f76" }}
           dateTime={post.date}
         >
           {formatDate(post.date)}

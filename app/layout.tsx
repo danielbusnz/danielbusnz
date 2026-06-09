@@ -47,7 +47,7 @@ export default function RootLayout({
                             <Link
                                 href="/"
                                 className="text-lg font-semibold tracking-tight no-underline"
-                                style={{ color: "#8caaee" }}
+                                style={{ color: "#ef9f76" }}
                             >
                                 Daniel Brooks
                             </Link>
