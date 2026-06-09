@@ -149,7 +149,7 @@ export default function RootLayout({
                                 <span style={punct}>{"{"}</span>
                             </div>
                             <div className="pl-6">
-                                <span style={{ color: "var(--ctp-red)" }}>building</span>
+                                <span style={{ color: "var(--ctp-red)" }}>currently_building</span>
                                 <span style={punct}>: </span>
                                 <a
                                     href="https://github.com/danielbusnz-lgtm/Peeky"
