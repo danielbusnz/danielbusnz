@@ -36,18 +36,21 @@ export default async function PostPage({
 
   return (
     <article>
-      <Link href="/" className="text-sm text-zinc-500 no-underline">
+      <Link
+        href="/"
+        className="text-sm text-ctp-subtext0 no-underline hover:text-ctp-blue"
+      >
         ← back
       </Link>
       <header className="mt-6">
-        <time className="text-sm text-zinc-500" dateTime={post.date}>
+        <time className="text-sm text-ctp-subtext0" dateTime={post.date}>
           {formatDate(post.date)}
         </time>
         <h1 className="mt-1 text-2xl font-semibold tracking-tight">
           {post.title}
         </h1>
       </header>
-      <div className="prose prose-zinc dark:prose-invert mt-8 max-w-none">
+      <div className="prose mt-8 max-w-none">
         <Markdown remarkPlugins={[remarkGfm]}>{post.content}</Markdown>
       </div>
     </article>

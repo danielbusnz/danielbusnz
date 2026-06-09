@@ -1,32 +1,74 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Catppuccin Frappé */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ctp-rosewater: #f2d5cf;
+  --ctp-flamingo: #eebebe;
+  --ctp-pink: #f4b8e4;
+  --ctp-mauve: #ca9ee6;
+  --ctp-red: #e78284;
+  --ctp-maroon: #ea999c;
+  --ctp-peach: #ef9f76;
+  --ctp-yellow: #e5c890;
+  --ctp-green: #a6d189;
+  --ctp-teal: #81c8be;
+  --ctp-blue: #8caaee;
+  --ctp-lavender: #babbf1;
+  --ctp-text: #c6d0f5;
+  --ctp-subtext1: #b5bfe2;
+  --ctp-subtext0: #a5adce;
+  --ctp-overlay1: #838ba7;
+  --ctp-overlay0: #737994;
+  --ctp-surface0: #414559;
+  --ctp-base: #303446;
+  --ctp-mantle: #292c3c;
+  --ctp-crust: #232634;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-ctp-text: var(--ctp-text);
+  --color-ctp-subtext1: var(--ctp-subtext1);
+  --color-ctp-subtext0: var(--ctp-subtext0);
+  --color-ctp-overlay1: var(--ctp-overlay1);
+  --color-ctp-surface0: var(--ctp-surface0);
+  --color-ctp-base: var(--ctp-base);
+  --color-ctp-mantle: var(--ctp-mantle);
+  --color-ctp-crust: var(--ctp-crust);
+  --color-ctp-blue: var(--ctp-blue);
+  --color-ctp-mauve: var(--ctp-mauve);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--ctp-base);
+  color: var(--ctp-text);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
 a {
+  color: var(--ctp-blue);
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+/* Frappé-tinted prose */
+.prose {
+  --tw-prose-body: var(--ctp-text);
+  --tw-prose-headings: var(--ctp-text);
+  --tw-prose-lead: var(--ctp-subtext1);
+  --tw-prose-links: var(--ctp-blue);
+  --tw-prose-bold: var(--ctp-text);
+  --tw-prose-counters: var(--ctp-subtext0);
+  --tw-prose-bullets: var(--ctp-overlay1);
+  --tw-prose-hr: var(--ctp-surface0);
+  --tw-prose-quotes: var(--ctp-subtext1);
+  --tw-prose-quote-borders: var(--ctp-surface0);
+  --tw-prose-captions: var(--ctp-subtext0);
+  --tw-prose-code: var(--ctp-mauve);
+  --tw-prose-pre-code: var(--ctp-text);
+  --tw-prose-pre-bg: var(--ctp-mantle);
+  --tw-prose-th-borders: var(--ctp-surface0);
+  --tw-prose-td-borders: var(--ctp-surface0);
 }

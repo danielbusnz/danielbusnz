@@ -36,11 +36,11 @@ export default function RootLayout({
         <header className="mx-auto w-full max-w-2xl px-6 pt-12 pb-6">
           <Link
             href="/"
-            className="text-lg font-semibold tracking-tight no-underline"
+            className="text-ctp-text text-lg font-semibold tracking-tight no-underline"
           >
             Daniel Brooks
           </Link>
-          <p className="mt-1 text-sm text-zinc-500">
+          <p className="mt-1 text-sm text-ctp-subtext0">
             Daily notes on what I&apos;m building.
           </p>
         </header>
