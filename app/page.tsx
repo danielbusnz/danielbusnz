@@ -20,11 +20,11 @@ export default function Home() {
             <section className="flex flex-col gap-3">
                 <h2
                     className="text-lg font-semibold tracking-tight"
-                    style={{ color: "#8caaee" }}
+                    style={{ color: "#b5bfe2" }}
                 >
                     Projects
                 </h2>
-                <p className="text-sm" style={{ color: "#85c1dc" }}>
+                <p className="text-sm" style={{ color: "#737994" }}>
                     {projects.map(([name, url], i) => (
                         <span key={name}>
                             {i > 0 && ", "}
@@ -32,7 +32,7 @@ export default function Home() {
                                 href={url}
                                 target="_blank"
                                 rel="noreferrer"
-                                style={{ color: "#85c1dc" }}
+                                style={{ color: "#8caaee" }}
                             >
                                 {name}
                             </a>
@@ -60,7 +60,7 @@ export default function Home() {
                     <Link
                         href={`/posts/${post.slug}`}
                         className="text-2xl font-semibold tracking-tight no-underline"
-                        style={{ color: "#ea999c" }}
+                        style={{ color: "#c6d0f5" }}
                     >
                         {formatDate(post.date)}
                     </Link>

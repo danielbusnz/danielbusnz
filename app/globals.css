@@ -18,8 +18,11 @@
   --ctp-text: #c6d0f5;
   --ctp-subtext1: #b5bfe2;
   --ctp-subtext0: #a5adce;
+  --ctp-overlay2: #949cbb;
   --ctp-overlay1: #838ba7;
   --ctp-overlay0: #737994;
+  --ctp-surface2: #626880;
+  --ctp-surface1: #51576d;
   --ctp-surface0: #414559;
   --ctp-base: #303446;
   --ctp-mantle: #292c3c;
@@ -103,19 +106,19 @@ body {
 /* Frappé-tinted prose */
 .prose {
   --tw-prose-body: var(--ctp-text);
-  --tw-prose-headings: var(--ctp-text);
+  --tw-prose-headings: var(--ctp-subtext1);
   --tw-prose-lead: var(--ctp-subtext1);
   --tw-prose-links: var(--ctp-blue);
   --tw-prose-bold: var(--ctp-text);
   --tw-prose-counters: var(--ctp-subtext0);
   --tw-prose-bullets: var(--ctp-overlay1);
-  --tw-prose-hr: var(--ctp-surface0);
+  --tw-prose-hr: var(--ctp-surface2);
   --tw-prose-quotes: var(--ctp-subtext1);
-  --tw-prose-quote-borders: var(--ctp-surface0);
+  --tw-prose-quote-borders: var(--ctp-surface2);
   --tw-prose-captions: var(--ctp-subtext0);
   --tw-prose-code: var(--ctp-mauve);
   --tw-prose-pre-code: var(--ctp-text);
   --tw-prose-pre-bg: var(--ctp-mantle);
-  --tw-prose-th-borders: var(--ctp-surface0);
-  --tw-prose-td-borders: var(--ctp-surface0);
+  --tw-prose-th-borders: var(--ctp-surface1);
+  --tw-prose-td-borders: var(--ctp-surface1);
 }

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 const iconLink = "no-underline";
-const iconColor = { color: "#ea999c" };
+const iconColor = { color: "#838ba7" };
 const punct = { color: "var(--ctp-overlay1)" };
 
 export default function RootLayout({
@@ -38,7 +38,7 @@ export default function RootLayout({
             className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
         >
             <body className="min-h-full">
-                <aside className="w-full overflow-y-auto px-6 py-6 lg:fixed lg:left-0 lg:top-0 lg:h-screen lg:w-64 lg:px-4 lg:py-8">
+                <aside className="w-full overflow-y-auto px-6 py-6 lg:fixed lg:left-0 lg:top-0 lg:h-screen lg:w-64 lg:bg-ctp-mantle lg:px-4 lg:py-8">
                     <PostTree />
                 </aside>
                 <div className="flex min-h-screen flex-col">
@@ -136,12 +136,12 @@ export default function RootLayout({
                         </div>
                         <p
                             className="mt-1 text-sm font-medium"
-                            style={{ color: "var(--ctp-yellow)" }}
+                            style={{ color: "var(--ctp-subtext0)" }}
                         >
                             Software Engineer
                         </p>
                         <p className="mt-1 font-mono text-sm">
-                            <span style={{ color: "var(--ctp-red)" }}>
+                            <span style={{ color: "var(--ctp-subtext1)" }}>
                                 currently_building
                             </span>
                             <span style={punct}>: </span>
@@ -149,23 +149,26 @@ export default function RootLayout({
                                 href="https://github.com/danielbusnz-lgtm/Peeky"
                                 target="_blank"
                                 rel="noreferrer"
-                                style={{ color: "#85c1dc" }}
+                                style={{ color: "#8caaee" }}
                             >
                                 &quot;Peeky&quot;
                             </a>
                             <span style={punct}>;</span>
                         </p>
                         <p className="mt-1 font-mono text-sm">
-                            <span style={{ color: "var(--ctp-red)" }}>based_in</span>
+                            <span style={{ color: "var(--ctp-subtext1)" }}>based_in</span>
                             <span style={punct}>: </span>
-                            <span style={{ color: "#85c1dc" }}>&quot;Boston&quot;</span>
+                            <span style={{ color: "#a6d189" }}>&quot;Boston&quot;</span>
                             <span style={punct}>;</span>
                         </p>
                     </header>
                     <main className="mx-auto w-full max-w-2xl flex-1 px-6 pb-12">
                         {children}
                     </main>
-                    <footer className="mx-auto w-full max-w-2xl px-6 pb-12 text-center text-xs text-ctp-subtext0">
+                    <footer
+                        className="mx-auto w-full max-w-2xl px-6 pb-12 text-center text-xs"
+                        style={{ color: "var(--ctp-overlay0)" }}
+                    >
                         design inspired by{" "}
                         <a
                             href="https://x.com/yacineMTB"
