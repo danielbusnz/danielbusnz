@@ -159,7 +159,7 @@ export default function RootLayout({
                                 >
                                     &quot;Peeky&quot;
                                 </a>
-                                <span style={punct}>,</span>
+                                <span style={punct}>;</span>
                             </div>
                             <div style={punct}>{"}"}</div>
                         </div>
