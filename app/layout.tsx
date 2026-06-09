@@ -45,6 +45,12 @@ export default function RootLayout({
             >
               Daniel Brooks
             </Link>
+            <p
+              className="mt-1 text-sm font-medium"
+              style={{ color: "var(--ctp-yellow)" }}
+            >
+              Software Engineer
+            </p>
             <p className="mt-1 text-sm text-ctp-subtext0">
               Daily notes on what I&apos;m building.
             </p>
