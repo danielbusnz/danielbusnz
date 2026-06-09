@@ -135,8 +135,16 @@ export default function RootLayout({
                         >
                             Software Engineer
                         </p>
-                        <p className="mt-1 text-sm text-ctp-subtext0">
-                            Daily notes on what I&apos;m building.
+                        <p className="mt-1 text-sm" style={{ color: "#99d1db" }}>
+                            Currently building{" "}
+                            <a
+                                href="https://github.com/danielbusnz-lgtm/Peeky"
+                                target="_blank"
+                                rel="noreferrer"
+                                style={{ color: "#99d1db" }}
+                            >
+                                https://github.com/danielbusnz-lgtm/Peeky
+                            </a>
                         </p>
                     </header>
                     <main className="mx-auto w-full max-w-2xl flex-1 px-6 pb-24">
