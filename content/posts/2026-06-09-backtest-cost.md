@@ -1,5 +1,5 @@
 ---
-date: 2026-06-09
+date: 2026-06-09T21:12:54Z
 title: backtest cost
 ---
 

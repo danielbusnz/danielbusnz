@@ -11,7 +11,7 @@ export type PostMeta = {
   summary: string;
 };
 
-export type Post = PostMeta & { content: string };
+export type Post = PostMeta & { content: string; sortKey: number };
 
 // A short label for the sidebar tree. Uses the `title` frontmatter if set,
 // otherwise derives ~2 words from the first line of the body.
@@ -36,12 +36,17 @@ function readPost(filename: string): Post {
   const slug = filename.replace(/\.md$/, "");
   const raw = fs.readFileSync(path.join(POSTS_DIR, filename), "utf8");
   const { data, content } = matter(raw);
+  // Parse the full frontmatter date (may include a time) once: `date` keeps the
+  // day for display, `sortKey` keeps full precision so same-day posts still
+  // order by time of posting.
+  const parsed = data.date ? new Date(data.date) : null;
   return {
     slug,
     title: treeLabel(data.title, content),
-    date: data.date ? new Date(data.date).toISOString().slice(0, 10) : "",
+    date: parsed ? parsed.toISOString().slice(0, 10) : "",
     summary: data.summary ?? "",
     content,
+    sortKey: parsed ? parsed.getTime() : 0,
   };
 }
 
@@ -51,7 +56,7 @@ export function getAllPosts(): Post[] {
     .readdirSync(POSTS_DIR)
     .filter((f) => f.endsWith(".md"))
     .map(readPost)
-    .sort((a, b) => (a.date < b.date ? 1 : -1));
+    .sort((a, b) => b.sortKey - a.sortKey);
 }
 
 export type PostTree = {
