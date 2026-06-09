@@ -53,6 +53,51 @@ a {
   text-underline-offset: 2px;
 }
 
+/* nvim-tree style post explorer */
+.tree summary {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.15rem 0.3rem;
+  border-radius: 0.25rem;
+  color: var(--ctp-subtext0);
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+.tree summary::-webkit-details-marker {
+  display: none;
+}
+.tree summary::before {
+  content: "▸";
+  font-size: 0.7em;
+  color: var(--ctp-overlay1);
+  transition: transform 0.15s ease;
+}
+.tree details[open] > summary::before {
+  transform: rotate(90deg);
+}
+.tree summary:hover {
+  background: var(--ctp-surface0);
+  color: var(--ctp-text);
+}
+.tree-children {
+  margin-left: 0.55rem;
+  padding-left: 0.55rem;
+  border-left: 1px solid var(--ctp-surface0);
+}
+.tree-file {
+  display: block;
+  padding: 0.15rem 0.3rem;
+  border-radius: 0.25rem;
+  color: var(--ctp-text);
+  text-decoration: none;
+}
+.tree-file:hover {
+  background: var(--ctp-surface0);
+  color: var(--ctp-blue);
+}
+
 /* Frappé-tinted prose */
 .prose {
   --tw-prose-body: var(--ctp-text);

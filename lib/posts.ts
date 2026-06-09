@@ -35,6 +35,38 @@ export function getAllPosts(): Post[] {
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
+export type PostTree = {
+  year: string;
+  months: { key: string; label: string; posts: PostMeta[] }[];
+}[];
+
+// Group posts into a year -> month -> posts tree, newest first at every level.
+export function getPostTree(): PostTree {
+  const years = new Map<string, Map<string, PostMeta[]>>();
+  for (const post of getAllPosts()) {
+    const year = post.date.slice(0, 4);
+    const month = post.date.slice(0, 7); // yyyy-mm
+    const months = years.get(year) ?? new Map();
+    years.set(year, months);
+    months.set(month, [...(months.get(month) ?? []), post]);
+  }
+  const desc = (a: string, b: string) => (a < b ? 1 : -1);
+  return [...years.entries()]
+    .sort(([a], [b]) => desc(a, b))
+    .map(([year, months]) => ({
+      year,
+      months: [...months.entries()]
+        .sort(([a], [b]) => desc(a, b))
+        .map(([key, posts]) => ({
+          key,
+          label: new Date(`${key}-01T00:00:00`).toLocaleDateString("en-US", {
+            month: "long",
+          }),
+          posts,
+        })),
+    }));
+}
+
 export function getPost(slug: string): Post | null {
   const file = path.join(POSTS_DIR, `${slug}.md`);
   if (!fs.existsSync(file)) return null;
