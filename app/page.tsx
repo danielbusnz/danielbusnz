@@ -48,8 +48,7 @@ export default function Home() {
                     className="mt-4 h-auto w-full rounded-lg"
                 />
                 <p className="mt-2 text-center text-[13px] text-ctp-subtext0">
-                    A place for my live notes. What I&apos;m building,
-                    researching, and reading. Unedited, straight from the dome.
+                    Daily updates on what im building, researching and reading.
                 </p>
             </section>
             {posts.length === 0 && (
