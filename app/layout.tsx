@@ -158,6 +158,17 @@ export default function RootLayout({
                             <span style={punct}>;</span>
                         </p>
                         <p className="mt-1 font-mono text-sm">
+                            <span style={{ color: "var(--ctp-subtext1)" }}>
+                                currently_reading
+                            </span>
+                            <span style={punct}>: </span>
+                            <span style={{ color: "#a6d189" }}>
+                                &quot;The Beginning of Infinity: Explanations That
+                                Transform the World&quot;
+                            </span>
+                            <span style={punct}>;</span>
+                        </p>
+                        <p className="mt-1 font-mono text-sm">
                             <span style={{ color: "var(--ctp-subtext1)" }}>based_in</span>
                             <span style={punct}>: </span>
                             <span style={{ color: "#a6d189" }}>&quot;Boston&quot;</span>
