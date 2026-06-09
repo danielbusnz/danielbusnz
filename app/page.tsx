@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts, formatDate } from "@/lib/posts";
 
@@ -6,6 +7,14 @@ export default function Home() {
 
     return (
         <div className="flex flex-col gap-10">
+            <Image
+                src="/space.png"
+                alt=""
+                width={1600}
+                height={900}
+                priority
+                className="h-auto w-full rounded-lg"
+            />
             {posts.length === 0 && (
                 <p className="text-ctp-subtext0">No posts yet.</p>
             )}
