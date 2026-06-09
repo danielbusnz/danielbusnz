@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 import { getAllPosts, formatDate } from "@/lib/posts";
 
 const projects: [string, string][] = [
@@ -64,7 +66,10 @@ export default function Home() {
                         {formatDate(post.date)}
                     </Link>
                     <div className="prose prose-sm mt-4 max-w-none">
-                        <Markdown remarkPlugins={[remarkGfm]}>
+                        <Markdown
+                            remarkPlugins={[remarkGfm, remarkMath]}
+                            rehypePlugins={[rehypeKatex]}
+                        >
                             {post.content}
                         </Markdown>
                     </div>
