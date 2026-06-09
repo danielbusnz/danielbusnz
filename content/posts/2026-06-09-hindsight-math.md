@@ -9,25 +9,35 @@ Can an LLM trade. Grade it only on data after its training cutoff, where it can'
 
 **Setup.** Prices $p_t$, position $x_t \in \{-1, 0, +1\}$ (short, flat, long). The position is held one bar before it earns, so returns are:
 
-$$r_t = x_{t-1}\left(\frac{p_t}{p_{t-1}} - 1\right)$$
+$$
+r_t = x_{t-1}\left(\frac{p_t}{p_{t-1}} - 1\right)
+$$
 
 That one-bar shift blocks look-ahead. Period returns compound into total return:
 
-$$\text{Total} = \prod_t (1 + r_t) - 1$$
+$$
+\text{Total} = \prod_t (1 + r_t) - 1
+$$
 
 Sharpe is mean return divided by volatility:
 
-$$S = \frac{\bar r}{\sigma}$$
+$$
+S = \frac{\bar r}{\sigma}
+$$
 
 **Leakage test.** Compare the candidate's Sharpe before and after the training cutoff. A model with edge should maintain it; a model that was memorizing should collapse. Subtract out regime drift (using momentum as control):
 
-$$L = (S^{\text{cand}}_{\text{pre}} - S^{\text{cand}}_{\text{post}}) - (S^{\text{ctrl}}_{\text{pre}} - S^{\text{ctrl}}_{\text{post}})$$
+$$
+L = (S^{\text{cand}}_{\text{pre}} - S^{\text{cand}}_{\text{post}}) - (S^{\text{ctrl}}_{\text{pre}} - S^{\text{ctrl}}_{\text{post}})
+$$
 
 If $L > 0$ and the 95% bootstrap CI excludes zero, the drop is real leakage, not market regime.
 
 **Significance.** Permutation test: flip sign of each return at random $P = 2000$ times, count how many have Sharpe as high as the real one:
 
-$$p = \frac{k + 1}{P + 1}$$
+$$
+p = \frac{k + 1}{P + 1}
+$$
 
 Bonferroni-adjust for multiple candidates: $p_{\text{adj}} = \min(1, p \cdot N)$.
 
