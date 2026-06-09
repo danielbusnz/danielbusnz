@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 import { getAllPosts, getPost, formatDate } from "@/lib/posts";
 
 export const dynamicParams = false;
@@ -52,7 +54,12 @@ export default async function PostPage({
         </time>
       </header>
       <div className="prose prose-sm mt-8 max-w-none">
-        <Markdown remarkPlugins={[remarkGfm]}>{post.content}</Markdown>
+        <Markdown
+          remarkPlugins={[remarkGfm, remarkMath]}
+          rehypePlugins={[rehypeKatex]}
+        >
+          {post.content}
+        </Markdown>
       </div>
     </article>
   );
