@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import { PostTree } from "@/components/post-tree";
+import { Sidebar } from "@/components/sidebar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -38,9 +39,9 @@ export default function RootLayout({
             className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
         >
             <body className="min-h-full">
-                <aside className="w-full overflow-y-auto px-6 py-6 lg:fixed lg:left-0 lg:top-0 lg:h-screen lg:w-64 lg:bg-ctp-mantle lg:px-4 lg:py-8">
+                <Sidebar>
                     <PostTree />
-                </aside>
+                </Sidebar>
                 <div className="flex min-h-screen flex-col">
                     <header className="mx-auto w-full max-w-2xl px-6 pt-12 pb-6">
                         <div className="flex items-center gap-2.5">
