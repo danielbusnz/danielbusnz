@@ -20,7 +20,7 @@ export default function Home() {
             <section className="flex flex-col gap-3">
                 <h2
                     className="text-lg font-semibold tracking-tight"
-                    style={{ color: "#ca9ee6" }}
+                    style={{ color: "#8caaee" }}
                 >
                     Projects
                 </h2>
@@ -60,7 +60,7 @@ export default function Home() {
                     <Link
                         href={`/posts/${post.slug}`}
                         className="text-2xl font-semibold tracking-tight no-underline"
-                        style={{ color: "#ca9ee6" }}
+                        style={{ color: "#8caaee" }}
                     >
                         {formatDate(post.date)}
                     </Link>
