@@ -2,15 +2,41 @@ import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts, formatDate } from "@/lib/posts";
 
+const projects: [string, string][] = [
+    ["timemachine", "https://github.com/danielbusnz-lgtm/timemachine"],
+    ["routelet", "https://github.com/danielbusnz-lgtm/routelet"],
+    ["hindsight", "https://github.com/danielbusnz-lgtm/hindsight"],
+    ["loomglass", "https://github.com/danielbusnz-lgtm/loomglass"],
+    ["Peeky", "https://github.com/danielbusnz-lgtm/Peeky"],
+];
+
 export default function Home() {
     const posts = getAllPosts();
 
     return (
         <div className="flex flex-col gap-10">
             <section className="flex flex-col gap-3">
-                <h2 className="text-lg font-semibold tracking-tight text-ctp-text">
-                    Other Projects
+                <h2
+                    className="text-lg font-semibold tracking-tight"
+                    style={{ color: "#8caaee" }}
+                >
+                    Projects
                 </h2>
+                <p className="text-sm" style={{ color: "#99d1db" }}>
+                    {projects.map(([name, url], i) => (
+                        <span key={name}>
+                            {i > 0 && ", "}
+                            <a
+                                href={url}
+                                target="_blank"
+                                rel="noreferrer"
+                                style={{ color: "#99d1db" }}
+                            >
+                                {name}
+                            </a>
+                        </span>
+                    ))}
+                </p>
                 <Image
                     src="/space.png"
                     alt=""
