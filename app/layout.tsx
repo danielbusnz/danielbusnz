@@ -46,7 +46,8 @@ export default function RootLayout({
                         <div className="flex items-center gap-2.5">
                             <Link
                                 href="/"
-                                className="text-ctp-text text-lg font-semibold tracking-tight no-underline"
+                                className="text-lg font-semibold tracking-tight no-underline"
+                                style={{ color: "#8caaee" }}
                             >
                                 Daniel Brooks
                             </Link>
@@ -148,7 +149,7 @@ export default function RootLayout({
                                 href="https://github.com/danielbusnz-lgtm/Peeky"
                                 target="_blank"
                                 rel="noreferrer"
-                                style={{ color: "#8caaee" }}
+                                style={{ color: "#99d1db" }}
                             >
                                 &quot;Peeky&quot;
                             </a>

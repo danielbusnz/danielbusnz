@@ -47,10 +47,12 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
-a {
-  color: var(--ctp-blue);
-  text-decoration: underline;
-  text-underline-offset: 2px;
+@layer base {
+  a {
+    color: var(--ctp-blue);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
 }
 
 /* nvim-tree style post explorer */
