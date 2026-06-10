@@ -180,12 +180,6 @@ export default function RootLayout({
                             </span>
                             <span style={punct}>;</span>
                         </p>
-                        <p className="mt-1 font-mono text-sm">
-                            <span style={{ color: "var(--ctp-subtext1)" }}>based_in</span>
-                            <span style={punct}>: </span>
-                            <span style={{ color: "#a6d189" }}>&quot;Boston&quot;</span>
-                            <span style={punct}>;</span>
-                        </p>
                         <NowPlaying />
                     </header>
                     <main className="mx-auto w-full max-w-2xl flex-1 px-6 pb-12">
