@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
+import { NowPlaying } from "@/components/now-playing";
 import { PostTree } from "@/components/post-tree";
 import { Sidebar } from "@/components/sidebar";
 import "./globals.css";
@@ -174,6 +175,7 @@ export default function RootLayout({
                             <span style={{ color: "#a6d189" }}>&quot;Boston&quot;</span>
                             <span style={punct}>;</span>
                         </p>
+                        <NowPlaying />
                     </header>
                     <main className="mx-auto w-full max-w-2xl flex-1 px-6 pb-12">
                         {children}
