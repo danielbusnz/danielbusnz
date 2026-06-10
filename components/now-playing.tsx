@@ -23,14 +23,7 @@ export function NowPlaying() {
     <p className="mt-1 font-mono text-sm">
       <span style={{ color: "var(--ctp-subtext1)" }}>currently_listening</span>
       <span style={punct}>: </span>
-      <a
-        href="https://www.youtube.com/watch?v=7kh_r2uwZIw"
-        target="_blank"
-        rel="noreferrer"
-        style={{ color: "#8caaee" }}
-      >
-        &quot;2 lost electronic&quot;
-      </a>
+      <span style={{ color: "#a6d189" }}>&quot;2 lost electronic&quot;</span>
       <span style={punct}>;</span>
       <button
         type="button"

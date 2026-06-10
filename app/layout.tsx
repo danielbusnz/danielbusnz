@@ -148,14 +148,9 @@ export default function RootLayout({
                                 currently_building
                             </span>
                             <span style={punct}>: </span>
-                            <a
-                                href="https://github.com/danielbusnz-lgtm/Peeky"
-                                target="_blank"
-                                rel="noreferrer"
-                                style={{ color: "#8caaee" }}
-                            >
+                            <span style={{ color: "#a6d189" }}>
                                 &quot;Peeky&quot;
-                            </a>
+                            </span>
                             <span style={punct}>;</span>
                         </p>
                         <p className="mt-1 font-mono text-sm">
