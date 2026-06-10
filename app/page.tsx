@@ -47,7 +47,7 @@ export default function Home() {
                     width={1600}
                     height={897}
                     priority
-                    className="mt-4 h-auto w-full rounded-lg"
+                    className="mt-4 h-auto w-full rounded-lg mask-x-from-99% mask-y-from-99%"
                 />
                 <p className="mt-2 text-center text-[13px] text-ctp-subtext0">
                     Daily updates on what im building, researching and reading.
