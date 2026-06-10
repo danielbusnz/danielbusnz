@@ -11,7 +11,7 @@ const projects: [string, string][] = [
     ["routelet", "https://github.com/danielbusnz-lgtm/routelet"],
     ["hindsight", "https://github.com/danielbusnz-lgtm/hindsight"],
     ["loomglass", "https://github.com/danielbusnz-lgtm/loomglass"],
-    ["Peeky", "https://github.com/danielbusnz-lgtm/Peeky"],
+    ["peeky", "https://github.com/danielbusnz-lgtm/Peeky"],
 ];
 
 export default function Home() {

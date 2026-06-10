@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 import { NowPlaying } from "@/components/now-playing";
 import { PostTree } from "@/components/post-tree";
@@ -149,9 +150,24 @@ export default function RootLayout({
                             </span>
                             <span style={punct}>: </span>
                             <span style={{ color: "#a6d189" }}>
-                                &quot;Peeky&quot;
+                                &quot;peeky&quot;
                             </span>
                             <span style={punct}>;</span>
+                            <a
+                                href="https://github.com/danielbusnz-lgtm/Peeky"
+                                target="_blank"
+                                rel="noreferrer"
+                                aria-label="peeky on GitHub"
+                                className="ml-2 inline-block align-text-bottom"
+                            >
+                                <Image
+                                    src="/folder.png"
+                                    alt=""
+                                    width={96}
+                                    height={81}
+                                    className="h-auto w-5"
+                                />
+                            </a>
                         </p>
                         <p className="mt-1 font-mono text-sm">
                             <span style={{ color: "var(--ctp-subtext1)" }}>
