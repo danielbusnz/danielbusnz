@@ -42,10 +42,10 @@ export default function Home() {
                     ))}
                 </p>
                 <Image
-                    src="/space.png"
+                    src="/astronaut.png"
                     alt=""
                     width={1600}
-                    height={900}
+                    height={897}
                     priority
                     className="mt-4 h-auto w-full rounded-lg"
                 />
