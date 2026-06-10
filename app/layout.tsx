@@ -180,19 +180,6 @@ export default function RootLayout({
                     <main className="mx-auto w-full max-w-2xl flex-1 px-6 pb-12">
                         {children}
                     </main>
-                    <footer
-                        className="mx-auto w-full max-w-2xl px-6 pb-12 text-center text-xs"
-                        style={{ color: "var(--ctp-overlay0)" }}
-                    >
-                        design inspired by{" "}
-                        <a
-                            href="https://x.com/yacineMTB"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            @yacineMTB
-                        </a>
-                    </footer>
                 </div>
             </body>
         </html>
