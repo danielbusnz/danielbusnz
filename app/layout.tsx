@@ -141,7 +141,7 @@ export default function RootLayout({
                             className="mt-1 text-sm font-medium"
                             style={{ color: "var(--ctp-subtext0)" }}
                         >
-                            Software Engineer
+                            AI engineer, systems-leaning. Rust, Go, Python, TS
                         </p>
                         <p className="mt-1 font-mono text-sm">
                             <span style={{ color: "var(--ctp-subtext1)" }}>
